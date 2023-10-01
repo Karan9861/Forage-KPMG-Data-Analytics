@@ -1,0 +1,42 @@
+NewCustomerList:
+
+5 hidden columns with unknown column headers having numerical values
+Gender column has values 'U' (17 rows) which is unclear to what they could possibly mean , also these rows don't have any DOB 
+past_3_years_bike_related_purchases 9 customers don't have any purchase, which is irrelavant to our analysis
+DOB has 17 rows without data, which are under U category of gender,
+last name of 29 people are not recorded
+Job_title has many titles with 4 different classification (I,II,III,IV) which are unclear why and can be claasified as one instead of 4, also has about 106 rows missing
+job_industry_category has 165 empty rows with 22 rows not having job_title as well
+deceased_indicator has all 'N' values
+country has all 'Australia' values
+property_valuation has some float values, which all can be made to integers
+value column should be made consistent in terms of decimal units, either to 4 or 2 decimal places to ensure daata consistency
+
+
+Meta data
+
+wealth segment
+
+CustomerDemographic:
+
+{4001, 4002, 4003} records are missing from this data table which are present in CustomerAddress table
+last_name of 126 records are missing
+Gender has multiple values reffering to same category i.e, Male and M referring to male, also Female, Femal and F referring to female, so we can make rename it to male and female. for U category there are 88 rows.
+past_3_years_bike_related_purchases 38 customers don't have any purchase, which is irrelavant to our analysis
+Only one customer has a DOB mentioned or recorded incorrectly as 1843, so we delete this data, also has 87 missing values without data, which are all under U category of gender
+Job_title has many titles with 4 different classification (I,II,III,IV) which are unclear why and can be claasified as one instead of 4, also has about 504 rows missing
+job_industry_category has 655 empty rows with 104 rows not having job_title as well
+2 customers are marked in deceased indicators and hence can be dropped
+Tenure has 87 data rows missing which are all under U category of gender, and hence this gives more strength of dropping columns with U gender as they have majority chunk of data missing
+default column has unrelevant data containing unidentified symbols and characters, hence needs to be dropped
+
+
+CustomerAddress:
+
+{3, 10, 22, 23} records are missing from this data table which are present in CustomerAddress table, hence losing important information about property valuation
+country has all 'Australia' values
+
+
+Transactions:
+
+
